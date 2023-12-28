@@ -18,7 +18,7 @@ const DashboardHeader = () => {
         <h3 className="pl-6 text-3xl font-semibold">{section}</h3>
       </div>
       {/* Search Bar */}
-      <div className="flex ">
+      <div className="flex">
         <SearchBar />
         <User />
       </div>

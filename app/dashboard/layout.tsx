@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import React from "react";
 import SideNav from "../ui/dashboard/sidenav";
-import DashboardHeader from "../ui/dashboard/dashboard-header";
+import DashboardHeader from "../ui/dashboard/header/dashboard-header";
 import Footer from "../ui/dashboard/footer";
 
 export const metadata: Metadata = {

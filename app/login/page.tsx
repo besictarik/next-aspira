@@ -1,7 +1,7 @@
 import AspiraLogo from "../ui/aspira-logo-white";
-import FaceBook from "../ui/icons/facebook-icon";
-import Linkedin from "../ui/icons/linkedin-icon";
-import Twitter from "../ui/icons/twitter-icon";
+import FaceBookIcon from "../ui/icons/facebook-icon";
+import LinkedinIcon from "../ui/icons/linkedin-icon";
+import TwitterIcon from "../ui/icons/twitter-icon";
 import LoginForm from "../ui/signin/login-form";
 
 const Login = () => {
@@ -20,9 +20,9 @@ const Login = () => {
           College Of Management And Design
         </p>
         <div className="mt-6 flex gap-[10px]">
-          <FaceBook />
-          <Twitter />
-          <Linkedin />
+          <FaceBookIcon />
+          <TwitterIcon />
+          <LinkedinIcon />
         </div>
       </div>
       <div className="absolute left-[calc(50%-30px)] top-0 z-10 h-full w-[60%] -skew-x-[5deg] bg-white bg-cover after:absolute after:h-full after:w-full after:bg-[#ff0000b8] after:content-['']"></div>
