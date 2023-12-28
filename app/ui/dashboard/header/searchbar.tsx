@@ -9,7 +9,7 @@ const SearchBar = () => {
         id="text"
         name="text"
         placeholder="Search something here..."
-        className="box-border h-14 w-full bg-transparent py-[6px] pl-5 pr-3 text-sm font-normal text-[#b1b1b1] placeholder:text-sm placeholder:text-[#495057] focus:outline-none active:outline-none"
+        className="h-14 w-full bg-transparent py-[6px] pl-5 pr-3 text-sm font-normal text-[#b1b1b1] placeholder:text-sm placeholder:text-[#495057] focus:outline-none active:outline-none"
       />
       <SearchIcon className="ml-3 mr-6" />
     </div>
