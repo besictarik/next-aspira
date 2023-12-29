@@ -11,10 +11,10 @@ const DashboardHeader = () => {
   const section = capitalizeFirstLetter(pathname.split("/")[2]);
   // If pathname is /dashboard, section will be Dashboard
 
+  // was pl-6 now pl-16 bcs of no hamburger menu
   return (
-    <div className="flex min-h-[120px] w-full items-center justify-between rounded-tl-[50px] bg-[#f2f2f2] pl-6 pr-10">
+    <div className="flex min-h-[120px] w-full items-center justify-between rounded-tl-[50px] bg-[#f2f2f2] pl-16 pr-10">
       <div className="flex">
-        <HamburgerMenu />
         <h3 className="pl-6 text-3xl font-semibold">{section}</h3>
       </div>
       {/* Search Bar */}

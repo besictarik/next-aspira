@@ -1,8 +1,13 @@
+import { Metadata } from "next";
 import AspiraLogo from "../ui/aspira-logo-white";
 import FaceBookIcon from "../ui/icons/facebook-icon";
 import LinkedinIcon from "../ui/icons/linkedin-icon";
 import TwitterIcon from "../ui/icons/twitter-icon";
 import LoginForm from "../ui/signin/login-form";
+
+export const metadata: Metadata = {
+  title: "Login",
+};
 
 const Login = () => {
   return (

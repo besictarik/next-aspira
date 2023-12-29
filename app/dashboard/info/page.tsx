@@ -1,5 +1,5 @@
 import Card from "@/app/ui/dashboard/info/card-stats";
-import CollegeIconSVG from "@/public/icons/building-regular.svg";
+import CollegeIconSVG from "@/public/icons/graduation-cap-solid.svg";
 import ProfileIconSVG from "@/public/icons/user-regular.svg"; // Modified ProfileIcon component
 
 const Info = () => {
@@ -43,7 +43,7 @@ const Info = () => {
           image={card.image}
           content={card.content}
           number={card.number}
-          className={`${card.className} basis-[calc(25%-90px/4)]`}
+          className={`${card.className} basis-full sm:basis-[calc(50%-60px/2)] 2xl:basis-[calc(25%-90px/4)]`}
         />
       ))}
     </div>
