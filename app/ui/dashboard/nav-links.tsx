@@ -4,6 +4,7 @@ import StatsIconSVG from "@/public/icons/chart-simple-solid.svg";
 import CompanyIconSVG from "@/public/icons/building-regular.svg";
 import CollegeIconSVG from "@/public/icons/graduation-cap-solid.svg";
 import ProfileIconSVG from "@/public/icons/user-regular.svg";
+import NotifficationIconSVG from "@/public/icons/bell-regular.svg";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -32,12 +33,17 @@ const data = [
   {
     name: "Colleges",
     icon: CollegeIconSVG,
-    href: "/dashboard/college",
+    href: "/dashboard/colleges",
   },
   {
     name: "Companies",
     icon: CompanyIconSVG,
-    href: "/dashboard/company",
+    href: "/dashboard/companies",
+  },
+  {
+    name: "Notifications",
+    icon: NotifficationIconSVG,
+    href: "/dashboard/notifications",
   },
 ];
 
@@ -48,8 +54,8 @@ const NavLinks = ({ isOpen }: { isOpen: boolean }) => {
     <div className={`${isOpen ? "ml-[30px]" : "ml-[13px]"} mt-[15px]`}>
       <span className="sr-only">Navigation</span>
       <ul className="flex flex-col">
-        {data.map((link) => (
-          <li>
+        {data.map((link, index) => (
+          <li key={index}>
             <Link
               href={link.href}
               className={`group inline-flex w-full items-center rounded-s-lg transition-all delay-0 duration-300 ease-in-out hover:bg-[#FFFFFFB3] ${

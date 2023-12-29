@@ -1,8 +1,8 @@
 import CreateButton from "@/app/ui/dashboard/create-button";
 import SearchBar from "@/app/ui/dashboard/searchbar";
-import StudentsTable from "@/app/ui/dashboard/students/table";
+import ProfessorsTable from "@/app/ui/dashboard/professors/table";
 
-const Students = ({
+const Professors = ({
   searchParams,
 }: {
   searchParams?: { query?: string; page?: string };
@@ -10,12 +10,15 @@ const Students = ({
   return (
     <div className="w-full">
       <div className="mb-5 mt-8 flex items-center justify-between gap-2 md:mt-8">
-        <SearchBar placeholder="Search students..." />
-        <CreateButton text="Add Student" href={"/dashboard/students/create"} />
+        <SearchBar placeholder="Search professors..." />
+        <CreateButton
+          text="Add Professor"
+          href={"/dashboard/professors/create"}
+        />
       </div>
-      <StudentsTable />
+      <ProfessorsTable />
     </div>
   );
 };
 
-export default Students;
+export default Professors;
