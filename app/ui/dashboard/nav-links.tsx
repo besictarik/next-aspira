@@ -49,25 +49,46 @@ const NavLinks = ({ isOpen }: { isOpen: boolean }) => {
       <span className="sr-only">Navigation</span>
       <ul className="flex flex-col">
         {data.map((link) => (
-          <li
-            className={`inline-flex items-center transition-all delay-0 duration-300 ease-in-out ${
-              isOpen ? "px-[50px] py-[25px]" : "px-[15px] py-4"
-            }`}
-          >
-            <Image
-              src={link.icon}
-              alt={`${link.name} icon`}
-              className={`${isOpen ? "mr-[25px]" : ""} h-5 w-5`}
-            />
+          <li>
             <Link
-              className={`text-lg hover:text-white ${
-                link.href === pathname ? "text-white" : "text-[#FFFFFFB3]"
-              } ${isOpen ? "block" : "hidden"}`}
               href={link.href}
+              className={`group inline-flex w-full items-center rounded-s-lg transition-all delay-0 duration-300 ease-in-out hover:bg-[#FFFFFFB3] ${
+                isOpen ? "px-[50px] py-[25px]" : "px-[15px] py-4"
+              }`}
             >
-              {link.name}
+              <Image
+                src={link.icon}
+                alt={`${link.name} icon`}
+                className={`${isOpen ? "mr-[25px]" : ""} h-5 w-5`}
+              />
+              <span
+                className={`text-lg group-hover:text-white ${
+                  link.href === pathname ? "text-white" : "text-[#FFFFFFB3]"
+                } ${isOpen ? "block" : "hidden"}`}
+              >
+                {link.name}
+              </span>
             </Link>
           </li>
+          // <li
+          //   className={`inline-flex items-center transition-all delay-0 duration-300 ease-in-out ${
+          //     isOpen ? "px-[50px] py-[25px]" : "px-[15px] py-4"
+          //   }`}
+          // >
+          //   <Image
+          //     src={link.icon}
+          //     alt={`${link.name} icon`}
+          //     className={`${isOpen ? "mr-[25px]" : ""} h-5 w-5`}
+          //   />
+          //   <Link
+          //     className={`text-lg hover:text-white ${
+          //       link.href === pathname ? "text-white" : "text-[#FFFFFFB3]"
+          //     } ${isOpen ? "block" : "hidden"}`}
+          //     href={link.href}
+          //   >
+          //     {link.name}
+          //   </Link>
+          // </li>
         ))}
       </ul>
     </div>
