@@ -5,7 +5,7 @@ import { signOut } from "@/app/lib/actions";
 
 const User = () => {
   return (
-    <div className="group flex items-center pl-9 hover:cursor-pointer">
+    <div className="group/container flex items-center pl-9 hover:cursor-pointer">
       <Image
         src={ProfilePhoto}
         className="rounded-full"
@@ -19,15 +19,15 @@ const User = () => {
         <form action={signOut}>
           <button
             type="submit"
-            className="absolute -right-5 top-0 -z-10 flex h-full min-w-9 items-center gap-1 rounded-s-xl bg-[#ff0000b8] px-1 transition-all delay-0  duration-300 ease-in-out group-hover:right-0 group-hover:z-20 group-hover:min-w-full group-active:right-0 group-active:z-20 group-active:min-w-full"
+            className="group/link absolute -right-5 top-0 -z-10 flex h-full min-w-9 items-center gap-1 rounded-s-xl bg-[#ff0000b8] px-1 transition-all delay-0  duration-300 ease-in-out group-hover/container:right-0 group-hover/container:z-20 group-hover/container:min-w-full group-active/container:right-0 group-active/container:z-20 group-active/container:min-w-full"
           >
             <Image src={LogoutIcon} alt="Logout Icon" />
-            <span className="hidden text-white transition-all delay-0 duration-300 ease-in-out group-hover:block group-active:block">
+            <span className="hidden text-[#FFFFFFB3] transition-all delay-0 duration-300 ease-in-out group-hover/container:block group-hover/link:text-white group-active/container:block">
               Logout
             </span>
           </button>
         </form>
-        <div className="absolute right-0 top-0 -z-20 h-full w-0 bg-white  transition-all delay-0 duration-300 ease-in-out group-hover:z-10 group-hover:w-full group-active:z-10 group-active:w-full"></div>
+        <div className="absolute right-0 top-0 -z-20 h-full w-0 bg-white  transition-all delay-0 duration-300 ease-in-out group-hover/container:z-10 group-hover/container:w-full group-active/container:z-10 group-active:w-full"></div>
       </div>
     </div>
   );
