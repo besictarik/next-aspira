@@ -8,3 +8,7 @@ export const signIn = async (
 ) => {
   redirect("/dashboard/info");
 };
+
+export const signOut = async () => {
+  redirect("/sign-in");
+};
