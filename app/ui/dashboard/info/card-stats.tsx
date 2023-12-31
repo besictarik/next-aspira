@@ -9,7 +9,7 @@ const Card = ({
 }: {
   image: string;
   content: string;
-  number: number;
+  number: number | null;
   className?: string;
 }) => {
   return (

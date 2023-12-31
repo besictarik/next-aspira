@@ -1,13 +1,31 @@
+import {
+  fetchStudentCount,
+  fetchProfessorCount,
+  fetchCollegeCount,
+  fetchMentorCount,
+} from "@/app/lib/data";
 import Card from "@/app/ui/dashboard/info/card-stats";
 import CollegeIconSVG from "@/public/icons/graduation-cap-solid.svg";
 import ProfileIconSVG from "@/public/icons/user-regular.svg"; // Modified ProfileIcon component
+import { createClient } from "@/utils/supabase/server";
+import { cookies } from "next/headers";
 
-const Info = () => {
+const Info = async () => {
   // Fetching stats data from db
-  const numberOfStudents = 7;
-  const numberOfProfessors = 6;
-  const numberOfMentors = 6;
-  const numberOfColleges = 13;
+
+  const cookiestore = cookies();
+  const supabase = createClient(cookiestore);
+  const [
+    numberOfStudents,
+    numberOfProfessors,
+    numberOfMentors,
+    numberOfColleges,
+  ] = await Promise.all([
+    fetchStudentCount(supabase),
+    fetchProfessorCount(supabase),
+    fetchMentorCount(supabase),
+    fetchCollegeCount(supabase),
+  ]);
 
   const data = [
     {

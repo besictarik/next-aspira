@@ -3,7 +3,6 @@
 import { type SupabaseClient } from "@supabase/supabase-js";
 
 export const fetchStudents = async (supabase: SupabaseClient) => {
-  console.log("Fetching students...");
   const { data, error } = await supabase
     .from("student")
     .select("*, college(name)");
@@ -12,7 +11,6 @@ export const fetchStudents = async (supabase: SupabaseClient) => {
 };
 
 export const fetchProfessors = async (supabase: SupabaseClient) => {
-  console.log("Fetching professors...");
   const { data, error } = await supabase
     .from("professor")
     .select("*, college(name)");
@@ -21,17 +19,47 @@ export const fetchProfessors = async (supabase: SupabaseClient) => {
 };
 
 export const fetchColleges = async (supabase: SupabaseClient) => {
-  console.log("Fetching colleges...");
   const { data, error } = await supabase.from("college").select("*");
 
   return data;
 };
 
 export const fetchMentors = async (supabase: SupabaseClient) => {
-  console.log("Fetching mentors...");
   const { data, error } = await supabase
     .from("mentor")
     .select("*, college(name)");
 
   return data;
+};
+
+export const fetchStudentCount = async (supabase: SupabaseClient) => {
+  const { count, error } = await supabase
+    .from("student")
+    .select("*", { count: "exact", head: true });
+
+  return count;
+};
+
+export const fetchProfessorCount = async (supabase: SupabaseClient) => {
+  const { count, error } = await supabase
+    .from("professor")
+    .select("*", { count: "exact", head: true });
+
+  return count;
+};
+
+export const fetchCollegeCount = async (supabase: SupabaseClient) => {
+  const { count, error } = await supabase
+    .from("college")
+    .select("*", { count: "exact", head: true });
+
+  return count;
+};
+
+export const fetchMentorCount = async (supabase: SupabaseClient) => {
+  const { count, error } = await supabase
+    .from("mentor")
+    .select("*", { count: "exact", head: true });
+
+  return count;
 };
