@@ -2,6 +2,9 @@ import Image from "next/image";
 import ProfilePhoto from "@/public/profile-photo.jpeg";
 import DeleteCollege from "./delete-college-button";
 import EditCollege from "./edit-college-button";
+import { cookies } from "next/headers";
+import { createClient } from "@/utils/supabase/server";
+import { fetchColleges } from "@/app/lib/data";
 
 const data = [
   {
@@ -62,7 +65,10 @@ const data = [
   },
 ];
 
-const CollegesTable = () => {
+const CollegesTable = async () => {
+  const cookiestore = cookies();
+  const supabase = createClient(cookiestore);
+  const colleges = await fetchColleges(supabase);
   return (
     <div className="rounded-[1.25rem] bg-white p-[30px]">
       <table className="w-full">
@@ -71,13 +77,13 @@ const CollegesTable = () => {
             <th scope="col" className="basis-1/12">
               <span className="sr-only">Profile Images</span>
             </th>
-            <th scope="col" className="basis-2/12 text-start">
+            <th scope="col" className="basis-3/12 text-start">
               Name
             </th>
             <th scope="col" className="basis-1/12 text-start">
               Type
             </th>
-            <th scope="col" className="basis-3/12 text-start">
+            <th scope="col" className="basis-2/12 text-start">
               Address
             </th>
             <th scope="col" className="basis-1/12 text-start">
@@ -92,7 +98,7 @@ const CollegesTable = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((college) => (
+          {colleges?.map((college) => (
             <tr key={college.id} className="flex w-full items-center py-2">
               <td className="basis-1/12">
                 <Image
@@ -101,13 +107,13 @@ const CollegesTable = () => {
                   className="h-8 w-8 rounded-full"
                 />
               </td>
-              <td className="basis-2/12">{college.name}</td>
+              <td className="basis-3/12">{college.name}</td>
               <td className="basis-1/12">{college.type}</td>
-              <td className="basis-3/12">{college.address}</td>
-              <td className="basis-1/12">{college.public_private}</td>
+              <td className="basis-2/12">{college.address}</td>
+              <td className="basis-1/12">{college.sector}</td>
               <td className="basis-3/12">
-                {college.programs.map((program) => (
-                  <span key={program} className="mr-2 inline-block">
+                {college.programs.map((program: string, index: number) => (
+                  <span key={index} className="mr-2 inline-block">
                     {program}
                   </span>
                 ))}

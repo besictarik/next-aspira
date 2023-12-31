@@ -2,6 +2,9 @@ import Image from "next/image";
 import ProfilePhoto from "@/public/profile-photo.jpeg";
 import DeleteProfessor from "./delete-professor-button";
 import EditProfessor from "./edit-professor-button";
+import { fetchProfessors } from "@/app/lib/data";
+import { cookies } from "next/headers";
+import { createClient } from "@/utils/supabase/server";
 
 const data = [
   {
@@ -62,7 +65,10 @@ const data = [
   },
 ];
 
-const ProfessorsTable = () => {
+const ProfessorsTable = async () => {
+  const cookiestore = cookies();
+  const supabase = createClient(cookiestore);
+  const professors = await fetchProfessors(supabase);
   return (
     <div className="rounded-[1.25rem] bg-white p-[30px]">
       <table className="w-full">
@@ -89,7 +95,7 @@ const ProfessorsTable = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((professor) => (
+          {professors?.map((professor) => (
             <tr key={professor.id} className="flex w-full items-center py-2">
               <td className="basis-1/12">
                 <Image
@@ -101,7 +107,7 @@ const ProfessorsTable = () => {
               <td className="basis-2/12">
                 {professor.name} {professor.surname}
               </td>
-              <td className="basis-2/12">{professor.college}</td>
+              <td className="basis-2/12">{professor.college.name}</td>
               <td className="basis-2/12">{professor.specialization}</td>
               <td className="basis-4/12">{professor.email}</td>
               <td className="flex basis-1/12 gap-3">

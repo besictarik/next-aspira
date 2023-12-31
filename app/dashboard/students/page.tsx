@@ -11,7 +11,7 @@ const Students = ({
     <div className="w-full">
       <div className="mb-5 mt-8 flex items-center justify-between gap-2 md:mt-8">
         <SearchBar placeholder="Search students..." />
-        <CreateButton text="Add Student" href={"/dashboard/students/create"} />
+        <CreateButton text="Add Student" href={"/dashboard/students/add"} />
       </div>
       <StudentsTable />
     </div>

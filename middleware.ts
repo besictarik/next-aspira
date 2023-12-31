@@ -11,6 +11,14 @@ export const middleware = async (request: NextRequest) => {
     return NextResponse.redirect(new URL("/login", request.url));
   }
 
+  // Here user exists, so we can continue.
+  // if (
+  //   user?.user_metadata?.role === "admin" &&
+  //   request.nextUrl.pathname !== "/login"
+  // ) {
+  //   return NextResponse.redirect(new URL("/login", request.url));
+  // }
+
   return response;
 };
 

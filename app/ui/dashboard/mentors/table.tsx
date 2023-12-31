@@ -2,6 +2,9 @@ import Image from "next/image";
 import ProfilePhoto from "@/public/profile-photo.jpeg";
 import DeleteMentor from "./delete-mentor-button";
 import EditMentor from "./edit-mentor-button";
+import { cookies } from "next/headers";
+import { createClient } from "@/utils/supabase/server";
+import { fetchMentors } from "@/app/lib/data";
 
 const data = [
   {
@@ -46,7 +49,12 @@ const data = [
   },
 ];
 
-const MentorsTable = () => {
+const MentorsTable = async () => {
+  const cookiestore = cookies();
+  const supabase = createClient(cookiestore);
+  const mentors = await fetchMentors(supabase);
+  console.log(mentors);
+
   return (
     <div className="rounded-[1.25rem] bg-white p-[30px]">
       <table className="w-full">
@@ -73,7 +81,7 @@ const MentorsTable = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((mentor) => (
+          {mentors?.map((mentor) => (
             <tr key={mentor.id} className="flex w-full items-center py-2">
               <td className="basis-1/12">
                 <Image
@@ -85,10 +93,10 @@ const MentorsTable = () => {
               <td className="basis-2/12">
                 {mentor.name} {mentor.surname}
               </td>
-              <td className="basis-2/12">{mentor.college}</td>
+              <td className="basis-2/12">{mentor.college.name}</td>
               <td className="basis-2/12">{mentor.phone}</td>
               <td className="basis-4/12">{`${
-                mentor.availability ? "✅" : "❌"
+                mentor.available ? "✅" : "❌"
               }`}</td>
               <td className="flex basis-1/12 gap-3">
                 <DeleteMentor />
