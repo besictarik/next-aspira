@@ -12,6 +12,7 @@ export const fetchStudents = async (supabase: SupabaseClient) => {
 };
 
 export const fetchProfessors = async (supabase: SupabaseClient) => {
+  console.log("Fetching professors...");
   const { data, error } = await supabase
     .from("professor")
     .select("*, college(name)");
@@ -20,12 +21,14 @@ export const fetchProfessors = async (supabase: SupabaseClient) => {
 };
 
 export const fetchColleges = async (supabase: SupabaseClient) => {
+  console.log("Fetching colleges...");
   const { data, error } = await supabase.from("college").select("*");
 
   return data;
 };
 
 export const fetchMentors = async (supabase: SupabaseClient) => {
+  console.log("Fetching mentors...");
   const { data, error } = await supabase
     .from("mentor")
     .select("*, college(name)");

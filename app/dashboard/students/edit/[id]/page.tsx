@@ -4,26 +4,7 @@ import { cookies } from "next/headers";
 const EditStudent = async () => {
   const editUser = async () => {
     "use server";
-    const cookiestore = cookies();
-    const supabase = createClient(cookiestore);
-
-    await supabase.auth.updateUser({
-      data: { role: "admin" },
-    });
-    await supabase.auth.refreshSession();
   };
-
-  const getUsers = async () => {
-    const cookiestore = cookies();
-    const supabase = createClient(cookiestore);
-
-    const { data, error } = await supabase.from("students").select();
-    console.log(data);
-
-    return data;
-  };
-
-  const students = (await getUsers()) || [];
 
   return (
     <>
@@ -35,9 +16,6 @@ const EditStudent = async () => {
           Edit Student
         </button>
       </form>
-      {students.map((student, index) => {
-        return <p key={index}>{student.name}</p>;
-      })}
     </>
   );
 };

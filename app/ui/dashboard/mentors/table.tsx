@@ -53,7 +53,6 @@ const MentorsTable = async () => {
   const cookiestore = cookies();
   const supabase = createClient(cookiestore);
   const mentors = await fetchMentors(supabase);
-  console.log(mentors);
 
   return (
     <div className="rounded-[1.25rem] bg-white p-[30px]">
