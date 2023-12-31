@@ -7,6 +7,9 @@ export const fetchStudents = async (supabase: SupabaseClient) => {
     .from("student")
     .select("*, college(name)");
 
+  // @ts-ignore - until we implement supabase types
+  delete data?.college_id;
+
   return data;
 };
 
@@ -14,6 +17,9 @@ export const fetchProfessors = async (supabase: SupabaseClient) => {
   const { data, error } = await supabase
     .from("professor")
     .select("*, college(name)");
+
+  // @ts-ignore - until we implement supabase types
+  delete data?.college_id;
 
   return data;
 };
@@ -28,6 +34,9 @@ export const fetchMentors = async (supabase: SupabaseClient) => {
   const { data, error } = await supabase
     .from("mentor")
     .select("*, college(name)");
+
+  // @ts-ignore - until we implement supabase types
+  delete data?.college_id;
 
   return data;
 };
