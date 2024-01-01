@@ -1,6 +1,8 @@
 import CreateButton from "@/app/ui/dashboard/create-button";
 import SearchBar from "@/app/ui/dashboard/searchbar";
 import CollegesTable from "@/app/ui/dashboard/colleges/table";
+import { Suspense } from "react";
+import SkeletonCollegesTable from "@/app/ui/dashboard/colleges/skeleton-table";
 
 const Colleges = ({
   searchParams,
@@ -13,7 +15,9 @@ const Colleges = ({
         <SearchBar placeholder="Search colleges..." />
         <CreateButton text="Add College" href={"/dashboard/colleges/add"} />
       </div>
-      <CollegesTable />
+      <Suspense fallback={<SkeletonCollegesTable />}>
+        <CollegesTable />
+      </Suspense>
     </div>
   );
 };

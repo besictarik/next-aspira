@@ -8,6 +8,7 @@ const AspiraLogo = ({ className }: { className?: string }) => {
       className={twMerge(`w-60 ${className}`)}
       src={logo_red}
       alt="Aspira Logo"
+      priority
     />
   );
 };

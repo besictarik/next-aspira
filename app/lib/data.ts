@@ -3,6 +3,7 @@
 import { type SupabaseClient } from "@supabase/supabase-js";
 
 export const fetchStudents = async (supabase: SupabaseClient) => {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   const { data, error } = await supabase
     .from("student")
     .select("*, college(name)");
@@ -14,6 +15,7 @@ export const fetchStudents = async (supabase: SupabaseClient) => {
 };
 
 export const fetchProfessors = async (supabase: SupabaseClient) => {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   const { data, error } = await supabase
     .from("professor")
     .select("*, college(name)");
@@ -25,12 +27,14 @@ export const fetchProfessors = async (supabase: SupabaseClient) => {
 };
 
 export const fetchColleges = async (supabase: SupabaseClient) => {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   const { data, error } = await supabase.from("college").select("*");
 
   return data;
 };
 
 export const fetchMentors = async (supabase: SupabaseClient) => {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   const { data, error } = await supabase
     .from("mentor")
     .select("*, college(name)");
@@ -42,6 +46,7 @@ export const fetchMentors = async (supabase: SupabaseClient) => {
 };
 
 export const fetchStudentCount = async (supabase: SupabaseClient) => {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   const { count, error } = await supabase
     .from("student")
     .select("*", { count: "exact", head: true });
