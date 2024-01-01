@@ -6,49 +6,6 @@ import { cookies } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 import { fetchMentors } from "@/app/lib/data";
 
-const data = [
-  {
-    id: 1,
-    name: "John",
-    surname: "Doe",
-    college: "University of ABC",
-    phone: "+1234567890",
-    availability: true,
-  },
-  {
-    id: 2,
-    name: "Emily",
-    surname: "Smith",
-    college: "XYZ College",
-    phone: "+1987654321",
-    availability: false,
-  },
-  {
-    id: 3,
-    name: "Michael",
-    surname: "Johnson",
-    college: "University of DEF",
-    phone: "+1122334455",
-    availability: true,
-  },
-  {
-    id: 4,
-    name: "Sophia",
-    surname: "Brown",
-    college: "PQR University",
-    phone: "+1555099887",
-    availability: true,
-  },
-  {
-    id: 5,
-    name: "Alice",
-    surname: "Davis",
-    college: "LMN College",
-    phone: "+1888777666",
-    availability: false,
-  },
-];
-
 const MentorsTable = async () => {
   const cookiestore = cookies();
   const supabase = createClient(cookiestore);

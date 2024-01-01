@@ -11,7 +11,7 @@ const Mentors = ({
     <div className="w-full">
       <div className="mb-5 mt-8 flex items-center justify-between gap-2 md:mt-8">
         <SearchBar placeholder="Search mentors..." />
-        <CreateButton text="Add Mentor" href={"/dashboard/mentors/create"} />
+        <CreateButton text="Add Mentor" href={"/dashboard/mentors/add"} />
       </div>
       <MentorsTable />
     </div>

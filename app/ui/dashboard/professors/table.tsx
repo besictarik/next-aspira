@@ -6,65 +6,6 @@ import { fetchProfessors } from "@/app/lib/data";
 import { cookies } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 
-const data = [
-  {
-    id: 1,
-    name: "John",
-    surname: "Doe",
-    college: "University of ABC",
-    specialization: "Computer Science",
-    email: "johndoe@example.com",
-  },
-  {
-    id: 2,
-    name: "Emily",
-    surname: "Smith",
-    college: "XYZ College",
-    specialization: "Electrical Engineering",
-    email: "emilysmith@example.com",
-  },
-  {
-    id: 3,
-    name: "Michael",
-    surname: "Johnson",
-    college: "University of DEF",
-    specialization: "Business Administration",
-    email: "michaeljohnson@example.com",
-  },
-  {
-    id: 4,
-    name: "Sophia",
-    surname: "Brown",
-    college: "PQR University",
-    specialization: "Psychology",
-    email: "sophiabrown@example.com",
-  },
-  {
-    id: 5,
-    name: "Alice",
-    surname: "Davis",
-    college: "LMN College",
-    specialization: "Environmental Science",
-    email: "alicedavis@example.com",
-  },
-  {
-    id: 6,
-    name: "William",
-    surname: "Garcia",
-    college: "STU Institute",
-    specialization: "Mechanical Engineering",
-    email: "williamgarcia@example.com",
-  },
-  {
-    id: 7,
-    name: "Olivia",
-    surname: "Martinez",
-    college: "UVW University",
-    specialization: "Medicine",
-    email: "oliviamartinez@example.com",
-  },
-];
-
 const ProfessorsTable = async () => {
   const cookiestore = cookies();
   const supabase = createClient(cookiestore);

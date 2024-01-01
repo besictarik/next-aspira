@@ -1,3 +1,5 @@
+// Data for the app to use until db is connected
+
 export const studentsData = [
   {
     id: 1,
@@ -65,4 +67,163 @@ export const studentsData = [
   },
 ];
 
-export const professorsData = [];
+export const professorsData = [
+  {
+    id: 1,
+    name: "John",
+    surname: "Doe",
+    college: "University of ABC",
+    specialization: "Computer Science",
+    email: "johndoe@example.com",
+  },
+  {
+    id: 2,
+    name: "Emily",
+    surname: "Smith",
+    college: "XYZ College",
+    specialization: "Electrical Engineering",
+    email: "emilysmith@example.com",
+  },
+  {
+    id: 3,
+    name: "Michael",
+    surname: "Johnson",
+    college: "University of DEF",
+    specialization: "Business Administration",
+    email: "michaeljohnson@example.com",
+  },
+  {
+    id: 4,
+    name: "Sophia",
+    surname: "Brown",
+    college: "PQR University",
+    specialization: "Psychology",
+    email: "sophiabrown@example.com",
+  },
+  {
+    id: 5,
+    name: "Alice",
+    surname: "Davis",
+    college: "LMN College",
+    specialization: "Environmental Science",
+    email: "alicedavis@example.com",
+  },
+  {
+    id: 6,
+    name: "William",
+    surname: "Garcia",
+    college: "STU Institute",
+    specialization: "Mechanical Engineering",
+    email: "williamgarcia@example.com",
+  },
+  {
+    id: 7,
+    name: "Olivia",
+    surname: "Martinez",
+    college: "UVW University",
+    specialization: "Medicine",
+    email: "oliviamartinez@example.com",
+  },
+];
+
+export const collegesData = [
+  {
+    id: 1,
+    name: "University of ABC",
+    address: "123 Main Street, City A, State X",
+    type: "University",
+    public_private: "Public",
+    programs: ["Computer Science", "Biology", "Business Administration"],
+  },
+  {
+    id: 2,
+    name: "XYZ College",
+    address: "456 Elm Street, City B, State Y",
+    type: "College",
+    public_private: "Private",
+    programs: ["Engineering", "Psychology", "Visual Arts"],
+  },
+  {
+    id: 3,
+    name: "University of DEF",
+    address: "789 Oak Street, City C, State Z",
+    type: "University",
+    public_private: "Public",
+    programs: ["Medicine", "Economics", "Mathematics"],
+  },
+  {
+    id: 4,
+    name: "PQR University",
+    address: "101 Pine Street, City D, State W",
+    type: "University",
+    public_private: "Private",
+    programs: ["Law", "Chemistry", "Sociology"],
+  },
+  {
+    id: 5,
+    name: "LMN College",
+    address: "222 Cedar Street, City E, State V",
+    type: "College",
+    public_private: "Public",
+    programs: ["Environmental Science", "History", "Communication"],
+  },
+  {
+    id: 6,
+    name: "STU Institute",
+    address: "333 Maple Street, City F, State U",
+    type: "Institute",
+    public_private: "Private",
+    programs: ["Data Science", "Graphic Design", "Music Production"],
+  },
+  {
+    id: 7,
+    name: "UVW University",
+    address: "444 Birch Street, City G, State T",
+    type: "University",
+    public_private: "Public",
+    programs: ["Physics", "Political Science", "Foreign Languages"],
+  },
+];
+
+export const mentorsData = [
+  {
+    id: 1,
+    name: "John",
+    surname: "Doe",
+    college: "University of ABC",
+    phone: "+1234567890",
+    availability: true,
+  },
+  {
+    id: 2,
+    name: "Emily",
+    surname: "Smith",
+    college: "XYZ College",
+    phone: "+1987654321",
+    availability: false,
+  },
+  {
+    id: 3,
+    name: "Michael",
+    surname: "Johnson",
+    college: "University of DEF",
+    phone: "+1122334455",
+    availability: true,
+  },
+  {
+    id: 4,
+    name: "Sophia",
+    surname: "Brown",
+    college: "PQR University",
+    phone: "+1555099887",
+    availability: true,
+  },
+  {
+    id: 5,
+    name: "Alice",
+    surname: "Davis",
+    college: "LMN College",
+    phone: "+1888777666",
+    availability: false,
+  },
+];
