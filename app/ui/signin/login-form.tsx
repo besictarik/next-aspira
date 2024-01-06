@@ -2,6 +2,7 @@
 
 import { signIn } from "@/app/lib/actions";
 import { useFormState } from "react-dom";
+import LoginButton from "./login-button";
 
 const LoginForm = () => {
   const [error, dispatch] = useFormState(signIn, undefined);
@@ -63,12 +64,7 @@ const LoginForm = () => {
           Remember my preference
         </label>
       </div>
-      <button
-        type="submit"
-        className="flex h-14 w-full items-center justify-center bg-[#ff0000b8] text-base text-white hover:bg-[#32137c]"
-      >
-        Sign In
-      </button>
+      <LoginButton />
     </form>
   );
 };
