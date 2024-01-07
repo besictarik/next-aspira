@@ -11,7 +11,7 @@ const SideNav = () => {
     <div
       className={`min-h-full ${
         isOpen ? `w-[345px]` : `w-20`
-      } bg-[#ff0000b8] transition-all delay-0 duration-300 ease-in-out`}
+      } relative z-10 bg-white transition-all delay-0 duration-300 ease-in-out after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:bg-[#ff0000b8] after:transition-all after:delay-0 after:duration-300 after:ease-in-out after:content-['']`}
     >
       <div className="relative flex h-[120px] items-center">
         <AspiraLogo
